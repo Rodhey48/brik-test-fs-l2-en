@@ -10,12 +10,12 @@ Basically:
 
 From an engineer’s perspective, think of this as just a CRUD application.
 
-Here is the frontend stack you need to use for this project:
+Here is the stack you need to use for this project:
 
 - Vue
 - ~~Vuex~~ Pinia
 - ExpressJS
-- PostgreSQL/MongoDB
+- PostgreSQL
 
 ### More Technical Details
 
