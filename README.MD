@@ -1,3 +1,6 @@
+# WELCOME 
+ikuti intruksi berikut ini
+
 ### setup server
 - didalam folder server, pastikan membuat file .env (example sudah diberikan) dan mempunyai node versi 20^, npm versi 10^
 - siapkan database posgresql, dan masukan credential di file .env
