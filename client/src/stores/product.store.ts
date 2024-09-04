@@ -1,13 +1,12 @@
 import { defineStore } from 'pinia';
 import axios from 'axios';
-import { useConfigStore } from './config.store';  // Mengambil baseUrl dari config
-
+import { useConfigStore } from './config.store';
 
 export const useProductStore = defineStore('product', {
     state: () => ({
         products: [] as Array<{
-            id: number;
-            categoryId: number;
+            id: string;
+            categoryId: string;
             categoryName: string;
             sku: string;
             name: string;
@@ -20,26 +19,58 @@ export const useProductStore = defineStore('product', {
             price: number;
         }>,
         loading: false,
+        totalItems: 0,
+        totalPages: 0,
+        currentPage: 1,
+        searchQuery: '', // Tambahkan state untuk pencarian
     }),
     actions: {
-        async fetchProducts() {
+        async fetchProducts(page = 1, limit = 10, name = '') {
             const configStore = useConfigStore();
             const apiBaseUrl = configStore.apiBaseUrl;
             this.loading = true;
             try {
-                const token = localStorage.getItem('token')
+                const token = localStorage.getItem('token');
                 const response = await axios.get(`${apiBaseUrl}products`, {
+                    params: { page, limit, name },
                     headers: {
-                        'access_token': token
-                    }
+                        'access_token': token,
+                    },
                 });
-                this.products = response.data.data.products;
-                console.log(this.products)
+
+                const { products, totalItems, totalPages } = response.data.data;
+                this.products = products;
+                this.totalItems = totalItems;
+                this.totalPages = totalPages;
+                this.currentPage = page;
+                this.searchQuery = name;
             } catch (error) {
                 console.error('Error fetching products:', error);
             } finally {
                 this.loading = false;
             }
+        },
+
+        async nextPage() {
+            if (this.currentPage < this.totalPages) {
+                await this.fetchProducts(this.currentPage + 1, 10, this.searchQuery);
+            }
+        },
+
+        async prevPage() {
+            if (this.currentPage > 1) {
+                await this.fetchProducts(this.currentPage - 1, 10, this.searchQuery);
+            }
+        },
+
+        async goToPage(page: number) {
+            if (page >= 1 && page <= this.totalPages) {
+                await this.fetchProducts(page, 10, this.searchQuery);
+            }
+        },
+
+        async searchProducts(name: string) {
+            await this.fetchProducts(1, 10, name);
         },
     },
 });
