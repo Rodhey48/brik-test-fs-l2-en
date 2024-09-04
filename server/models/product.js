@@ -16,6 +16,11 @@ module.exports = (sequelize, DataTypes) => {
                 allowNull: false,
                 primaryKey: true,
             },
+            isActive: {
+                type: DataTypes.BOOLEAN,
+                allowNull: false,
+                defaultValue: true,
+            },
             categoryId: {
                 type: DataTypes.UUIDV4,
                 allowNull: false,

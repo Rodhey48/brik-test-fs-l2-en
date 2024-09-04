@@ -20,18 +20,12 @@ const authentication = async (req, res, next) => {
                 name: "Forbiden to Access",
             };
         }
-        if (user.role === "Admin") {
-            req.user = {
-                id: user.id,
-                username: user.username,
-                role: user.role,
-            };
-            next();
-        } else {
-            throw {
-                name: "Forbiden to Access",
-            };
-        }
+        req.user = {
+            id: user.id,
+            namw: user.name,
+            role: user.role,
+        };
+        next();
     } catch (err) {
         next(err);
     }

@@ -9,6 +9,7 @@ module.exports = {
             [
                 {
                     id: uuidv4(),
+                    isActive: true,
                     categoryId: "10019908-a63b-4cca-9648-f8f1b1bd1366",
                     sku: "SNK001",
                     name: "Chips",
@@ -24,6 +25,7 @@ module.exports = {
                 },
                 {
                     id: uuidv4(),
+                    isActive: true,
                     categoryId: "10019908-a63b-4cca-9648-f8f1b1bd1366",
                     sku: "SNK002",
                     name: "Cookies",
@@ -39,6 +41,7 @@ module.exports = {
                 },
                 {
                     id: uuidv4(),
+                    isActive: true,
                     categoryId: "10029908-a63b-4cca-9648-f8f1b1bd1366",
                     sku: "BEV001",
                     name: "Orange Juice",
@@ -54,6 +57,7 @@ module.exports = {
                 },
                 {
                     id: uuidv4(),
+                    isActive: true,
                     categoryId: "10029908-a63b-4cca-9648-f8f1b1bd1366",
                     sku: "BEV002",
                     name: "Apple Juice",
@@ -69,6 +73,7 @@ module.exports = {
                 },
                 {
                     id: uuidv4(),
+                    isActive: true,
                     categoryId: "10039908-a63b-4cca-9648-f8f1b1bd1366",
                     sku: "DAI001",
                     name: "Milk",
@@ -84,6 +89,7 @@ module.exports = {
                 },
                 {
                     id: uuidv4(),
+                    isActive: true,
                     categoryId: "10039908-a63b-4cca-9648-f8f1b1bd1366",
                     sku: "DAI002",
                     name: "Cheese",
@@ -99,6 +105,7 @@ module.exports = {
                 },
                 {
                     id: uuidv4(),
+                    isActive: true,
                     categoryId: "10049908-a63b-4cca-9648-f8f1b1bd1366",
                     sku: "BAK001",
                     name: "Bread",
@@ -114,6 +121,7 @@ module.exports = {
                 },
                 {
                     id: uuidv4(),
+                    isActive: true,
                     categoryId: "10049908-a63b-4cca-9648-f8f1b1bd1366",
                     sku: "BAK002",
                     name: "Croissant",
@@ -129,6 +137,7 @@ module.exports = {
                 },
                 {
                     id: uuidv4(),
+                    isActive: true,
                     categoryId: "10059908-a63b-4cca-9648-f8f1b1bd1366",
                     sku: "FRO001",
                     name: "Frozen Pizza",
@@ -144,6 +153,7 @@ module.exports = {
                 },
                 {
                     id: uuidv4(),
+                    isActive: true,
                     categoryId: "10059908-a63b-4cca-9648-f8f1b1bd1366",
                     sku: "FRO002",
                     name: "Frozen Vegetables",
@@ -159,6 +169,7 @@ module.exports = {
                 },
                 {
                     id: uuidv4(),
+                    isActive: true,
                     categoryId: "10019908-a63b-4cca-9648-f8f1b1bd1366",
                     sku: "SNK011",
                     name: "Potato Chips",
@@ -174,6 +185,7 @@ module.exports = {
                 },
                 {
                     id: uuidv4(),
+                    isActive: true,
                     categoryId: "10019908-a63b-4cca-9648-f8f1b1bd1366",
                     sku: "SNK012",
                     name: "Chocolate Cookies",
@@ -189,6 +201,7 @@ module.exports = {
                 },
                 {
                     id: uuidv4(),
+                    isActive: true,
                     categoryId: "10029908-a63b-4cca-9648-f8f1b1bd1366",
                     sku: "BEV011",
                     name: "Green Tea",
@@ -204,6 +217,7 @@ module.exports = {
                 },
                 {
                     id: uuidv4(),
+                    isActive: true,
                     categoryId: "10029908-a63b-4cca-9648-f8f1b1bd1366",
                     sku: "BEV012",
                     name: "Cola",
@@ -219,6 +233,7 @@ module.exports = {
                 },
                 {
                     id: uuidv4(),
+                    isActive: true,
                     categoryId: "10039908-a63b-4cca-9648-f8f1b1bd1366",
                     sku: "DAI011",
                     name: "Cheddar Cheese",
@@ -234,6 +249,7 @@ module.exports = {
                 },
                 {
                     id: uuidv4(),
+                    isActive: true,
                     categoryId: "10039908-a63b-4cca-9648-f8f1b1bd1366",
                     sku: "DAI022",
                     name: "Yogurt",
@@ -249,6 +265,7 @@ module.exports = {
                 },
                 {
                     id: uuidv4(),
+                    isActive: true,
                     categoryId: "10049908-a63b-4cca-9648-f8f1b1bd1366",
                     sku: "BAK021",
                     name: "Bagels",
@@ -264,6 +281,7 @@ module.exports = {
                 },
                 {
                     id: uuidv4(),
+                    isActive: true,
                     categoryId: "10049908-a63b-4cca-9648-f8f1b1bd1366",
                     sku: "BAK022",
                     name: "Danish Pastry",
@@ -279,6 +297,7 @@ module.exports = {
                 },
                 {
                     id: uuidv4(),
+                    isActive: true,
                     categoryId: "10059908-a63b-4cca-9648-f8f1b1bd1366",
                     sku: "FRO021",
                     name: "Frozen Chicken Nuggets",
@@ -294,6 +313,7 @@ module.exports = {
                 },
                 {
                     id: uuidv4(),
+                    isActive: true,
                     categoryId: "10059908-a63b-4cca-9648-f8f1b1bd1366",
                     sku: "FRO022",
                     name: "Frozen Fruits",
@@ -309,6 +329,7 @@ module.exports = {
                 },
                 {
                     id: uuidv4(),
+                    isActive: true,
                     categoryId: "10019908-a63b-4cca-9648-f8f1b1bd1366",
                     sku: "SNK033",
                     name: "Pretzels",
@@ -324,6 +345,7 @@ module.exports = {
                 },
                 {
                     id: uuidv4(),
+                    isActive: true,
                     categoryId: "10019908-a63b-4cca-9648-f8f1b1bd1366",
                     sku: "SNK034",
                     name: "Granola Bars",
@@ -339,6 +361,7 @@ module.exports = {
                 },
                 {
                     id: uuidv4(),
+                    isActive: true,
                     categoryId: "10029908-a63b-4cca-9648-f8f1b1bd1366",
                     sku: "BEV033",
                     name: "Lemonade",
@@ -354,6 +377,7 @@ module.exports = {
                 },
                 {
                     id: uuidv4(),
+                    isActive: true,
                     categoryId: "10029908-a63b-4cca-9648-f8f1b1bd1366",
                     sku: "BEV034",
                     name: "Iced Tea",
@@ -369,6 +393,7 @@ module.exports = {
                 },
                 {
                     id: uuidv4(),
+                    isActive: true,
                     categoryId: "10039908-a63b-4cca-9648-f8f1b1bd1366",
                     sku: "DAI043",
                     name: "Butter",
@@ -384,6 +409,7 @@ module.exports = {
                 },
                 {
                     id: uuidv4(),
+                    isActive: true,
                     categoryId: "10039908-a63b-4cca-9648-f8f1b1bd1366",
                     sku: "DAI044",
                     name: "Cream Cheese",
@@ -399,6 +425,7 @@ module.exports = {
                 },
                 {
                     id: uuidv4(),
+                    isActive: true,
                     categoryId: "10049908-a63b-4cca-9648-f8f1b1bd1366",
                     sku: "BAK033",
                     name: "Muffins",
@@ -414,6 +441,7 @@ module.exports = {
                 },
                 {
                     id: uuidv4(),
+                    isActive: true,
                     categoryId: "10049908-a63b-4cca-9648-f8f1b1bd1366",
                     sku: "BAK034",
                     name: "Baguette",
@@ -429,6 +457,7 @@ module.exports = {
                 },
                 {
                     id: uuidv4(),
+                    isActive: true,
                     categoryId: "10059908-a63b-4cca-9648-f8f1b1bd1366",
                     sku: "FRO033",
                     name: "Frozen Meatballs",
@@ -444,6 +473,7 @@ module.exports = {
                 },
                 {
                     id: uuidv4(),
+                    isActive: true,
                     categoryId: "10059908-a63b-4cca-9648-f8f1b1bd1366",
                     sku: "FRO034",
                     name: "Frozen Pizza Rolls",

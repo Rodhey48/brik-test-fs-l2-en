@@ -18,6 +18,11 @@ module.exports = (sequelize, DataTypes) => {
                 allowNull: false,
                 primaryKey: true,
             },
+            isActive: {
+                type: DataTypes.BOOLEAN,
+                allowNull: false,
+                defaultValue: true,
+            },
             name: {
                 type: DataTypes.STRING,
                 allowNull: false,

@@ -33,7 +33,6 @@ class UserController {
                 email: req.body.email,
                 password: req.body.password,
             };
-            console.log(input);
             if (!input.email) {
                 throw {
                     name: "Email is required",

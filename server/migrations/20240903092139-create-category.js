@@ -9,6 +9,11 @@ module.exports = {
                 type: Sequelize.UUID,
                 defaultValue: Sequelize.UUIDV4,
             },
+            isActive: {
+                type: Sequelize.BOOLEAN,
+                allowNull: false,
+                defaultValue: true,
+            },
             name: {
                 type: Sequelize.STRING,
                 allowNull: false,

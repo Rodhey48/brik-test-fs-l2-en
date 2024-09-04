@@ -8,6 +8,7 @@ module.exports = {
         await queryInterface.bulkInsert("Users", [
             {
                 id: uuidv4(),
+                isActive: true,
                 name: "Admin User",
                 email: "admin@email.com",
                 type: "admin",
@@ -17,6 +18,7 @@ module.exports = {
             },
             {
                 id: uuidv4(),
+                isActive: true,
                 name: "User 1",
                 email: "user1@email.com",
                 type: "user",
@@ -26,6 +28,7 @@ module.exports = {
             },
             {
                 id: uuidv4(),
+                isActive: true,
                 name: "User 2",
                 email: "user2@email.com",
                 type: "user",

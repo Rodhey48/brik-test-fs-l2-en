@@ -2,6 +2,9 @@ const express = require("express");
 const router = express.Router();
 const { validationResult } = require("express-validator");
 
+const categoryRoutes = require("./category");
+const productRoutes = require("./product");
+
 // Controller
 const UserController = require("../controllers/user");
 
@@ -25,7 +28,7 @@ const {
     userRegisterValidator,
 } = require("../validator/userValidator");
 
-// router
+// router auth
 router.post("/login", userLoginValidator, validate, UserController.loginUser);
 router.post(
     "/register",
@@ -33,5 +36,10 @@ router.post(
     validate,
     UserController.registerUser
 );
+
+// router.use(authentication);
+// Route untuk CRUD Category
+router.use("/categories", authentication, categoryRoutes);
+router.use("/products", authentication, productRoutes);
 
 module.exports = router;
