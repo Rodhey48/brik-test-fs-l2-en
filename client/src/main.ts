@@ -2,7 +2,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import 'bootstrap';
-
+import 'vue3-easy-data-table/dist/style.css';
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 

@@ -83,6 +83,7 @@ class ProductsController {
                 },
                 limit: parseInt(limit),
                 offset: parseInt(offset),
+                order: [["createdAt", "DESC"]],
             });
 
             const productsSchema = products.map((product) => ({

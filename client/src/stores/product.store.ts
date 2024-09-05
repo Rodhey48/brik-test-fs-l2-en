@@ -23,6 +23,7 @@ export const useProductStore = defineStore('product', {
         totalPages: 0,
         currentPage: 1,
         searchQuery: '',
+        currentProduct: null
     }),
     actions: {
         async fetchProducts(page = 1, limit = 10, name = '') {
@@ -71,6 +72,72 @@ export const useProductStore = defineStore('product', {
 
         async searchProducts(name: string) {
             await this.fetchProducts(1, 10, name);
+        },
+
+        async addProduct(product: {
+            name: string;
+            sku: string;
+            description: string;
+            weight: number;
+            width: number;
+            length: number;
+            height: number;
+            image: string;
+            price: number;
+            categoryId: string;
+        }) {
+            const configStore = useConfigStore();
+            const apiBaseUrl = configStore.apiBaseUrl;
+            this.loading = true;
+            try {
+                const token = localStorage.getItem('token');
+                await axios.post(`${apiBaseUrl}products`, product, {
+                    headers: {
+                        'access_token': token,
+                    },
+                });
+                await this.fetchProducts(this.currentPage, 10, this.searchQuery);
+            } catch (error) {
+                console.error('Error adding product:', error);
+            } finally {
+                this.loading = false;
+            }
+        },
+        async fetchProductById(id: string) {
+            const configStore = useConfigStore();
+            const apiBaseUrl = configStore.apiBaseUrl;
+            this.loading = true;
+            try {
+                const token = localStorage.getItem('token');
+                const response = await axios.get(`${apiBaseUrl}products/${id}`, {
+                    headers: {
+                        'access_token': token,
+                    },
+                });
+                this.currentProduct = response.data.data;
+            } catch (error) {
+                console.error('Error fetching product details:', error);
+            } finally {
+                this.loading = false;
+            }
+        },
+        async deleteProduct(id: string) {
+            const configStore = useConfigStore();
+            const apiBaseUrl = configStore.apiBaseUrl;
+            this.loading = true;
+            try {
+                const token = localStorage.getItem('token');
+                await axios.delete(`${apiBaseUrl}products/${id}`, {
+                    headers: {
+                        'access_token': token,
+                    },
+                });
+                await this.fetchProducts(this.currentPage, 10, this.searchQuery);
+            } catch (error) {
+                console.error('Error deleting product:', error);
+            } finally {
+                this.loading = false;
+            }
         },
     },
 });
