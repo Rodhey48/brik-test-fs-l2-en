@@ -22,7 +22,7 @@ export const useProductStore = defineStore('product', {
         totalItems: 0,
         totalPages: 0,
         currentPage: 1,
-        searchQuery: '', // Tambahkan state untuk pencarian
+        searchQuery: '',
     }),
     actions: {
         async fetchProducts(page = 1, limit = 10, name = '') {

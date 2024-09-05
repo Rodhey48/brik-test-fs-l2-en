@@ -2,9 +2,9 @@ import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
 import Login from "../views/Login.vue";
 
-// Fungsi untuk memeriksa autentikasi
+
 const isAuthenticated = () => {
-  return !!localStorage.getItem('token'); // Mengembalikan true jika token ada, false jika tidak ada
+  return !!localStorage.getItem('token');
 };
 
 const router = createRouter({
@@ -14,7 +14,7 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView,
-      meta: { requiresAuth: true }  // Menandai bahwa route ini memerlukan autentikasi
+      meta: { requiresAuth: true }
     },
     {
       path: '/login',
@@ -24,19 +24,15 @@ const router = createRouter({
   ]
 });
 
-// Navigation Guard
 router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.requiresAuth)) {
     if (!isAuthenticated()) {
-      console.log('Not authenticated, redirecting to /login'); // Debugging
-      next('/login');  // Redirect ke halaman login
+      next('/login');
     } else {
-      console.log('Authenticated, proceeding to route'); // Debugging
-      next();  // Lanjutkan ke route yang diinginkan
+      next();
     }
   } else {
-    console.log('No authentication required, proceeding to route'); // Debugging
-    next();  // Lanjutkan ke route yang diinginkan jika tidak memerlukan autentikasi
+    next();
   }
 });
 
